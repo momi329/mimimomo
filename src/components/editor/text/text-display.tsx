@@ -5,7 +5,12 @@ type TextDisplayProps = TextData & {
 };
 
 const TextDisplay = ({ text, onClick }: TextDisplayProps) => {
-  return <div onClick={onClick}>{text}</div>;
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onClick();
+  };
+
+  return <div onClick={handleClick}>{text}</div>;
 };
 
 export default TextDisplay;

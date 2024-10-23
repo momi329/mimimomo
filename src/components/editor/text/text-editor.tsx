@@ -10,8 +10,18 @@ const TextEditor = ({ onChange, ...props }: TextEditorProps) => {
     onChange({ ...props, [e.target.name]: e.target.value });
   };
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <Input name="text" type="text" value={props.text} onChange={handleChange} />
+    <Input
+      name="text"
+      type="text"
+      value={props.text}
+      onClick={handleClick}
+      onChange={handleChange}
+    />
   );
 };
 

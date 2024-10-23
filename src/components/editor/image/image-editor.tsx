@@ -10,14 +10,17 @@ const ImageEditor = ({ onChange, ...props }: ImageEditorProps) => {
     onChange({ ...props, [e.target.name]: e.target.value });
   };
 
-  console.log(props);
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
 
   return (
-    <div>
+    <>
       <Input
         name="src"
         type="url"
         value={props.src}
+        onClick={handleClick}
         onChange={handleChange}
         placeholder="圖片網址"
       />
@@ -25,6 +28,7 @@ const ImageEditor = ({ onChange, ...props }: ImageEditorProps) => {
         name="width"
         type="text"
         value={props.width}
+        onClick={handleClick}
         onChange={handleChange}
         placeholder="寬度"
       />
@@ -32,10 +36,11 @@ const ImageEditor = ({ onChange, ...props }: ImageEditorProps) => {
         name="height"
         type="text"
         value={props.height}
+        onClick={handleClick}
         onChange={handleChange}
         placeholder="高度"
       />
-    </div>
+    </>
   );
 };
 

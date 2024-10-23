@@ -14,13 +14,18 @@ const ImageDisplay = ({
   height = "200px",
   onClick,
 }: ImageDisplayProps) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onClick();
+  };
+
   return (
     <div className="relative overflow-hidden" style={{ width, height }}>
       <Image
         src={src}
         alt="image"
         fill
-        onClick={onClick}
+        onClick={handleClick}
         priority
         className="object-cover"
       />

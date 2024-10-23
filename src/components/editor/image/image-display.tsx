@@ -1,15 +1,15 @@
 "use client";
 
+import { DEFAULT_IMAGE_URL } from "@/data/editor-data";
+import type { ImageData } from "@/types/editor.type";
 import Image from "next/image";
-import { IMAGE_URL } from "../../../app/editor/page";
-import type { ImageData } from "../../../types/editor.type";
 
 type ImageDisplayProps = ImageData & {
   onClick: () => void;
 };
 
 const ImageDisplay = ({
-  src = IMAGE_URL,
+  src = DEFAULT_IMAGE_URL,
   width = 200,
   height = 200,
   onClick,

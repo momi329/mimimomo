@@ -10,18 +10,21 @@ type ImageDisplayProps = ImageData & {
 
 const ImageDisplay = ({
   src = DEFAULT_IMAGE_URL,
-  width = 200,
-  height = 200,
+  width = "200px",
+  height = "200px",
   onClick,
 }: ImageDisplayProps) => {
   return (
-    <Image
-      src={src}
-      alt="image"
-      width={width}
-      height={height}
-      onClick={onClick}
-    />
+    <div className="relative overflow-hidden" style={{ width, height }}>
+      <Image
+        src={src}
+        alt="image"
+        fill
+        onClick={onClick}
+        priority
+        className="object-cover"
+      />
+    </div>
   );
 };
 

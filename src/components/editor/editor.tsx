@@ -4,14 +4,15 @@ import TextEditor from "./text/text-editor";
 
 type EditorProps = {
   data: Data;
+  onChange: (data: Data) => void;
 };
 
-const Editor = ({ data }: EditorProps) => {
+const Editor = ({ data, onChange }: EditorProps) => {
   switch (data.type) {
     case "image":
-      return <ImageEditor {...data} />;
+      return <ImageEditor {...data} onChange={onChange} />;
     case "text":
-      return <TextEditor {...data} />;
+      return <TextEditor {...data} onChange={onChange} />;
   }
 };
 

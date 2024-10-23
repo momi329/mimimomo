@@ -14,6 +14,15 @@ const InterviewEditor = ({ defaultData }: InterviewEditorProps) => {
   const [dataList, setDataList] = useState<Data[]>(defaultData);
   const [editing, setEditing] = useState<number | null>(null);
 
+  const handleChange = (data: Data) => {
+    setDataList((prev) => {
+      if (editing === null) return prev;
+      const newDataList = [...prev];
+      newDataList[editing] = data;
+      return newDataList;
+    });
+  };
+
   const handleClick = (index: number) => {
     setEditing(index);
   };
@@ -27,7 +36,7 @@ const InterviewEditor = ({ defaultData }: InterviewEditorProps) => {
             <Button className="w-20">文字</Button>
           </>
         ) : (
-          <Editor data={dataList[editing]} />
+          <Editor data={dataList[editing]} onChange={handleChange} />
         )}
       </div>
       <div className="w-2/3">

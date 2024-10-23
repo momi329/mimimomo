@@ -4,8 +4,8 @@ export type ImageData = {
   id: string;
   type: "image";
   src?: string;
-  width?: number;
-  height?: number;
+  width?: string;
+  height?: string;
 };
 
 export type TextData = {

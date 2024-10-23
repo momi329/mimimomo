@@ -8,6 +8,8 @@ export const EDITOR_DATA: Data[] = [
     id: "image-1",
     type: "image",
     src: DEFAULT_IMAGE_URL,
+    width: "200px",
+    height: "200px",
   },
   { id: "text-1", type: "text", text: "wellll" },
 ];

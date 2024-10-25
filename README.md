@@ -20,7 +20,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Basic Functions
 
-### [Route /editor🔗](http://localhost:3000/editor)
+### [Route /editor 部屬連結 🔗](https://mimimomo-soek.vercel.app/editor)
 
 - [http://localhost:3000/editor](http://localhost:3000/editor)
 - 拖拉`圖片Button`,`文字Button`新增文字/圖片元素

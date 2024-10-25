@@ -12,7 +12,7 @@ export const DEFAULT_IMAGE_DATA = {
 
 export const DEFAULT_TEXT_DATA = {
   type: "text",
-  text: "wellll",
+  text: "Hello World",
 } as const;
 
 export const EDITOR_DATA: Data[] = [
